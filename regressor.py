@@ -17,7 +17,7 @@ heart_data['ExerciseAngina'] = (
     heart_data['ExerciseAngina'] == 'Y').astype(int)
 # End data setup
 
-# Regression model with all fields except th ECG related ones
+# Regression model with all fields except the ECG related ones
 x_train = numpy.array(heart_data[['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol',
                                   'FastingBS', 'MaxHR', 'ExerciseAngina', 'Oldpeak']])
 y_train = numpy.array(heart_data['HeartDisease'])
@@ -30,7 +30,5 @@ def logisticPredication(x, regressor: linear_model.LinearRegression) -> int():
     return (1 / (1 + math.exp(-(-regressor.intercept_ + x)))) > 0.5
 
 def predict(data: list) -> int():
-    print(data)
     predict = regressor.predict([data])
-    print(predict)
     return logisticPredication(x=predict, regressor=regressor)
