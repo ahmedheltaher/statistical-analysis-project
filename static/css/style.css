@@ -1,0 +1,168 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 99%;
+	width: 100%;
+}
+
+body {
+	font-family: "Roboto";
+
+	height: 100%;
+	width: 100%;
+	background-image: url(../assets/stat_background.png);
+	background-attachment: fixed;
+	background-clip: border-box;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+select {
+	border: 0px;
+	outline: 0px;
+	padding: 5px;
+	font-size: large;
+	width: 95px;
+	margin-top: 5px;
+}
+option {
+	background-color: #f7f7f7da;
+	border: 0px;
+	outline: 0px;
+}
+
+.form_view {
+	background-color: #f3f1f1e8;
+	width: 60%;
+
+	border-radius: 7px 7px 7px 7px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.form_view:hover {
+	box-shadow: 0 5px 10px rgba(15, 0, 9, 0.4);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+h2 small {
+	font-weight: normal;
+	color: #888;
+	display: block;
+}
+
+.group {
+	position: relative;
+}
+
+input:focus {
+	outline: none;
+}
+
+.label {
+	color: #999;
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+
+input:focus ~ l.abel,
+input:valid ~ .label {
+	top: -20px;
+	font-size: 14px;
+	color: #6f42b6;
+}
+
+.bar {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+.bar:before,
+.bar:after {
+	content: "";
+	height: 2px;
+	width: 0;
+	bottom: 1px;
+	position: absolute;
+	background: #6f42b6;
+	transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-webkit-transition: 0.2s ease all;
+}
+.bar:before {
+	left: 50%;
+}
+.bar:after {
+	right: 50%;
+}
+
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+	width: 50%;
+}
+
+.highlight {
+	position: absolute;
+	height: 60%;
+	width: 100px;
+	top: 25%;
+	left: 0;
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+	-webkit-animation: inputHighlighter 0.3s ease;
+	-moz-animation: inputHighlighter 0.3s ease;
+	animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from {
+		background: #6f42b6;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+@-moz-keyframes inputHighlighter {
+	from {
+		background: #6f42b6;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+@keyframes inputHighlighter {
+	from {
+		background: #6f42b6;
+	}
+	to {
+		width: 0;
+		background: transparent;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.form_view {
+		width: 95%;
+	}
+}

@@ -14,6 +14,8 @@ border () {
     echo
 }
 
+ pip freeze > requirements.txt
+
 git add .
 
 read -p "Commit Message: " message
