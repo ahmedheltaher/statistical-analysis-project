@@ -2,6 +2,7 @@ import math
 
 import numpy
 import pandas
+import statsmodels.api as sm
 from sklearn import linear_model
 
 # Reading the CSV
@@ -29,6 +30,10 @@ regressor.fit(x_train, y_train)
 def logisticPredication(x, regressor: linear_model.LinearRegression) -> int():
     return (1 / (1 + math.exp(-(-regressor.intercept_ + x)))) > 0.5
 
+
 def predict(data: list) -> int():
     predict = regressor.predict([data])
     return logisticPredication(x=predict, regressor=regressor)
+
+
+result = sm.OLS(y_train,  sm.add_constant(x_train)).fit()
