@@ -2,7 +2,9 @@ autopep8==1.6.0
 click==8.0.3
 dnspython==2.1.0
 Flask==2.0.2
+Flask-SQLAlchemy==2.5.1
 Flask-WTF==1.0.0
+greenlet==1.1.2
 gunicorn==20.1.0
 is-disposable-email==1.0.0
 itsdangerous==2.0.1
@@ -19,6 +21,7 @@ scikit-learn==1.0.2
 scipy==1.7.3
 six==1.16.0
 sklearn==0.0
+SQLAlchemy==1.4.29
 statsmodels==0.13.1
 threadpoolctl==3.0.0
 toml==0.10.2

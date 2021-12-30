@@ -115,6 +115,10 @@ input:focus ~ .bar:after {
 	width: 50%;
 }
 
+.btn-purple {
+	background-color: #6f42b6;
+}
+
 .highlight {
 	position: absolute;
 	height: 60%;
