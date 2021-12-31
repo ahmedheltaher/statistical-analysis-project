@@ -2,7 +2,6 @@ import math
 
 import numpy
 import pandas
-import statsmodels.api as sm
 from sklearn import linear_model
 
 # Reading the CSV
@@ -19,8 +18,9 @@ heart_data['ExerciseAngina'] = (
 # End data setup
 
 # Regression model with all fields except the ECG related ones
-x_train = numpy.array(heart_data[['Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol',
-                                  'FastingBS', 'MaxHR', 'ExerciseAngina', 'Oldpeak']])
+x_train_features = ['Age', 'Sex', 'ChestPainType', 'RestingBP',
+                    'Cholesterol', 'FastingBS', 'MaxHR', 'ExerciseAngina', 'Oldpeak']
+x_train = numpy.array(heart_data[x_train_features])
 y_train = numpy.array(heart_data['HeartDisease'])
 
 regressor = linear_model.LinearRegression()
@@ -35,5 +35,3 @@ def predict(data: list) -> int():
     predict = regressor.predict([data])
     return logisticPredication(x=predict, regressor=regressor)
 
-
-result = sm.OLS(y_train,  sm.add_constant(x_train)).fit()

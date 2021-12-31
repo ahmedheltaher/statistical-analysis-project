@@ -39,7 +39,7 @@ class RegistrationForm(flask_wtf.FlaskForm):
     exercise_angina = wtforms.SelectField(
         u'Do You Have exercise angina ', choices=[(1, 'Yes'), (0, 'No')], validators=[wtforms.validators.DataRequired()])
     chest_pain_type = wtforms.SelectField(
-        u'What is your chest pain type', choices=[(0, 'ATA'), (1, 'NAP'), (2, 'ASY'), (3, 'TA')], validators=[wtforms.validators.DataRequired()])
+        u'What is your chest pain type', choices=[(0, 'ATA (Atypical Angina)'), (1, 'NAP (N0n-Anginal Pain)'), (2, 'ASY (Asymptomatic)'), (3, 'TA (Typical Angina)')], validators=[wtforms.validators.DataRequired()])
 
     age = wtforms.IntegerField(
         'Age', validators=[wtforms.validators.DataRequired()])
